@@ -41,3 +41,20 @@ gsap.to("header",{
         scrub: .5
     }
 })
+
+document.getElementById("profile-btn").addEventListener("click", function() {
+  openPopup("login-popup");
+});
+
+
+function openPopup(id) {
+      document.getElementById(id).classList.add("active");
+    }
+    function closePopup(id) {
+      document.getElementById(id).classList.remove("active");
+    }
+    function toggleForm(formId) {
+      document.getElementById("login-form").classList.remove("active");
+      document.getElementById("register-form").classList.remove("active");
+      document.getElementById(formId).classList.add("active");
+    }

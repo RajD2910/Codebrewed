@@ -32,6 +32,7 @@
     <div class="icons">
         <div class="fas fa-search" id="search-btn"></div>
         <div class="fas fa-shopping-cart" id="cart-btn"></div>
+        <div class="fas fa-user" id="profile-btn"></div>
         <div class="fas fa-bars" id="menu-btn"></div>
     </div>
 
@@ -40,6 +41,40 @@
         <label for="search-box" class="fas fa-search"></label>
     </div>
 
+     <!-- code of Login/Register Popup options starts here -->
+
+  <div class="popup-form" id="login-popup">
+    <div class="popup-content">
+      <span class="close-btn" onclick="closePopup('login-popup')">&times;</span>
+      <div class="form-box active" id="login-form">
+        <form>
+          <h2>Login</h2>
+          <input type="email" placeholder="Email" required />
+          <input type="password" placeholder="Password" required />
+          <button type="submit">Login</button>
+          <p>Don't have an account? <a onclick="toggleForm('register-form')">Register</a></p>
+        </form>
+      </div>
+      <div class="form-box" id="register-form">
+        <form>
+          <h2>Register</h2>
+          <input type="text" placeholder="Name" required />
+          <input type="email" placeholder="Email" required />
+          <input type="password" placeholder="Password" required />
+          <select required>
+            <option value="">--Select Role--</option>
+            <option value="user">User</option>
+            <option value="admin">Admin</option>
+          </select>
+          <button type="submit">Register</button>
+          <p>Already have an account? <a onclick="toggleForm('login-form')">Login</a></p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- code of Login/Register Popup options ends here  -->
     <div class="cart-items-container">
         <div class="cart-item">
             <span class="fas fa-times"></span>
@@ -73,8 +108,24 @@
                 <div class="price">$15.99/-</div>
             </div>
         </div>
-        <a href="#" class="btn">checkout now</a>
+        <a href="#" class="btn"  onclick="openPopup('checkout-popup')">checkout now</a>
     </div>
+
+<!-- checkout pop up strts here -->
+    <div class="popup-form" id="checkout-popup">
+    <div class="popup-content">
+      <span class="close-btn" onclick="closePopup('checkout-popup')">&times;</span>
+      <h2>Checkout</h2>
+      <form>
+        <input type="text" placeholder="Full Name" required />
+        <input type="email" placeholder="Email" required />
+        <input type="text" placeholder="Address" required />
+        <input type="text" placeholder="Card Number" required />
+        <button type="submit">Place Order</button>
+      </form>
+    </div>
+  </div>
+<!-- checkout pop ends here  -->
 
 </header>
 
